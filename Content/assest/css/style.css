@@ -1,0 +1,104 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.mainSection {
+    max-width: 500px;
+    border: 1px solid #ddd;
+    position: relative;
+    margin: 10px auto;
+    box-shadow: 0 0.76875rem 2.4875rem rgb(52 58 64 / 30%), 0 1.3375rem 1.70625rem rgb(52 58 64 / 30%), 0 0.55rem 0.53125rem rgb(0 0 0 / 5%), 0 0.225rem 0.4375rem rgb(52 58 64 / 30%);
+}
+
+.logoArea {
+    background: #3C014E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.logoArea .logoTop {
+    height: 65px;
+}
+
+.formGroup {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup label {
+    font-size: 13px;
+    line-height: 17px;
+    color: #333;
+    font-family: sans-serif;
+    display: block;
+    font-weight:bold;
+}
+
+.formGroup .formContrl {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    outline:none;
+}
+
+.formListView {
+    position: relative;
+    padding: 10px;
+}
+.text-center {
+    text-align: center;
+}
+.btn {
+    background: #3C014E;
+    color: #FFF;
+    padding: 12px 35px;
+    border-radius: 30px;
+    border: 0px;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+    position: relative;
+    margin: auto;
+}
+.notifyAlt {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px;
+}
+.notifyAlt img {
+    height:150px;
+    object-fit: contain;
+    margin-bottom:10px;
+}
+.notifyAlt .notifySms {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+@media screen and (max-width: 992px) {
+    .notifyAlt {
+        max-width: 70%;
+    }
+    .notifyAlt img {
+        height:200px;
+    }
+    .notifyAlt .notifySms {
+        font-size: 38px;
+    }
+    .notifyAltPop {
+            margin-top: 50%;
+    }
+    .mainSection {
+        max-width: 100%;
+        margin: 15px;
+    }
+}
+@media(min-width:769px) { }
