@@ -13,7 +13,7 @@ namespace RazorpaySampleApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string GPaymentId= string.Empty;
+            string GPaymentId = string.Empty;
             string GtransactionId = string.Empty;
 
             string paymentSuccess = string.Empty;
@@ -51,14 +51,80 @@ namespace RazorpaySampleApp
 
                 // This code is for capture the payment 
                 Dictionary<string, object> options = new Dictionary<string, object>();
-                //options.Add("amount", payment.Attributes["amount"]);
-                //Razorpay.Api.Payment paymentCaptured = payment.Capture(options);
-                //string amt = paymentCaptured.Attributes["amount"];
-                if (payment.Attributes != null)
+                options.Add("amount", payment.Attributes["amount"]);
+                options.Add("currency", payment.Attributes["currency"]);
+                Razorpay.Api.Payment paymentCaptured = payment.Capture(options);
+
+                if (paymentCaptured.Attributes != null)
+                {
+                    enity.bank_transaction_id = Convert.ToString(paymentCaptured.Attributes["acquirer_data"]["bank_transaction_id"]);
+                    enity.address = Convert.ToString(paymentCaptured.Attributes["notes"]["address"]);
+                    enity.entity = Convert.ToString(paymentCaptured.Attributes["entity"]);
+                    enity.amount = Convert.ToDecimal(paymentCaptured.Attributes["amount"]);
+                    enity.currency = Convert.ToString(paymentCaptured.Attributes["currency"]);
+                    enity.status = Convert.ToString(paymentCaptured.Attributes["status"]);
+                    enity.order_id = Convert.ToString(paymentCaptured.Attributes["order_id"]);
+                    enity.invoice_id = Convert.ToString(paymentCaptured.Attributes["invoice_id"]);
+                    enity.international = Convert.ToString(paymentCaptured.Attributes["international"]);
+                    enity.method = Convert.ToString(paymentCaptured.Attributes["method"]);
+                    enity.amount_refunded = Convert.ToDecimal(paymentCaptured.Attributes["amount_refunded"]);
+                    enity.refund_status = Convert.ToString(paymentCaptured.Attributes["refund_status"]);
+                    enity.captured = Convert.ToString(paymentCaptured.Attributes["captured"]);
+                    enity.description = Convert.ToString(paymentCaptured.Attributes["description"]);
+                    enity.card_id = Convert.ToString(paymentCaptured.Attributes["card_id"]);
+                    enity.bank = Convert.ToString(paymentCaptured.Attributes["bank"]);
+                    enity.wallet = Convert.ToString(paymentCaptured.Attributes["wallet"]);
+                    enity.vpa = Convert.ToString(paymentCaptured.Attributes["vpa"]);
+                    enity.email = Convert.ToString(paymentCaptured.Attributes["email"]);
+                    enity.contact = Convert.ToString(paymentCaptured.Attributes["contact"]);
+                    enity.fee = Convert.ToString(paymentCaptured.Attributes["fee"]);
+                    enity.tax = Convert.ToString(paymentCaptured.Attributes["tax"]);
+                    enity.error_code = Convert.ToString(paymentCaptured.Attributes["error_code"]);
+                    enity.error_description = Convert.ToString(paymentCaptured.Attributes["error_description"]);
+                    enity.error_source = Convert.ToString(paymentCaptured.Attributes["error_source"]);
+                    enity.error_step = Convert.ToString(paymentCaptured.Attributes["error_step"]);
+                    enity.error_reason = Convert.ToString(paymentCaptured.Attributes["error_reason"]);
+                    enity.created_at = Convert.ToString(paymentCaptured.Attributes["created_at"]);
+                    enity.trx_id = transactionId;
+                    enity.id = paymentId;
+                    enity.exception = Convert.ToString(paymentCaptured.Attributes["error_reason"]);
+                    paymentSuccess = Convert.ToString(paymentCaptured.Attributes["status"]);
+                    //RazorPayResponseClass objRes = new RazorPayResponseClass();
+                    //int returnResult = 0;
+                    //Inserting log
+
+                    returnResult = objRes.Insert_Bill_Details(enity);
+
+                    if (paymentSuccess.ToLower() == "captured")
+                    {
+                        lblMsg.Text = "Your payment has been confirmed. Thank you.";
+                        lblMsg.ForeColor = System.Drawing.Color.Green;
+                        img.ImageUrl = "Content/assest/images/success.gif";
+                    }
+                    else if (paymentSuccess.ToLower() == "authorized")
+                    {
+                        lblMsg.Text = "Payment Failed";
+                        lblMsg.ForeColor = System.Drawing.Color.Red;
+                        img.ImageUrl = "Content/assest/images/error.gif";
+                    }
+                    else if (paymentSuccess.ToLower() == "failed")
+                    {
+                        lblMsg.Text = "Payment Failed!";
+                        lblMsg.ForeColor = System.Drawing.Color.Red;
+                        img.ImageUrl = "Content/assest/images/error.gif";
+                    }
+                    else
+                    {
+                        lblMsg.Text = "Payment Failed";
+                        lblMsg.ForeColor = System.Drawing.Color.Red;
+                        img.ImageUrl = "Content/assest/images/error.gif";
+                    }
+                }
+                else if (payment.Attributes != null)
                 {
                     //here creating entity with response data           
-                    enity.bank_transaction_id = payment.Attributes["acquirer_data"]["bank_transaction_id"];
-                    enity.address = payment.Attributes["notes"]["address"];
+                    enity.bank_transaction_id = Convert.ToString(payment.Attributes["acquirer_data"]["bank_transaction_id"]);
+                    enity.address = Convert.ToString(payment.Attributes["notes"]["address"]);
                     enity.entity = Convert.ToString(payment.Attributes["entity"]);
                     enity.amount = Convert.ToDecimal(payment.Attributes["amount"]);
                     enity.currency = Convert.ToString(payment.Attributes["currency"]);
@@ -88,23 +154,29 @@ namespace RazorpaySampleApp
                     enity.trx_id = transactionId;
                     enity.id = paymentId;
                     enity.exception = Convert.ToString(payment.Attributes["error_reason"]);
-                    paymentSuccess = payment.Attributes["status"];
+                    paymentSuccess = Convert.ToString(payment.Attributes["status"]);
                     //RazorPayResponseClass objRes = new RazorPayResponseClass();
                     //int returnResult = 0;
                     //Inserting log
 
                     returnResult = objRes.Insert_Bill_Details(enity);
 
-                    if (payment.Attributes["status"] == "captured")
+                    if (paymentSuccess.ToLower() == "captured")
                     {
-                        lblMsg.Text = "Payment successful";
+                        lblMsg.Text = "Your payment has been confirmed. Thank you.";
                         lblMsg.ForeColor = System.Drawing.Color.Green;
                         img.ImageUrl = "Content/assest/images/success.gif";
                     }
-                    else if (payment.Attributes["status"] == "failed")
+                    else if (paymentSuccess.ToLower() == "authorized")
                     {
                         lblMsg.Text = "Payment Failed!";
-                        lblMsg.ForeColor = System.Drawing.Color.Green;
+                        lblMsg.ForeColor = System.Drawing.Color.Red;
+                        img.ImageUrl = "Content/assest/images/error.gif";
+                    }
+                    else if (paymentSuccess.ToLower() == "failed")
+                    {
+                        lblMsg.Text = "Payment Failed!";
+                        lblMsg.ForeColor = System.Drawing.Color.Red;
                         img.ImageUrl = "Content/assest/images/error.gif";
                     }
                     else
@@ -150,20 +222,20 @@ namespace RazorpaySampleApp
                     returnResult = objRes.Insert_Bill_Details(enity);
 
                     lblMsg.Text = "Payment Failed!";
-                    lblMsg.ForeColor = System.Drawing.Color.Green;
+                    lblMsg.ForeColor = System.Drawing.Color.Red;
                     img.ImageUrl = "Content/assest/images/error.gif";
                 }
-               
+
                 //// Check payment made successfully
 
-               
+
 
                 //Please use below code to refund the payment   
                 //Refund refund = new Razorpay.Api.Payment((string)paymentId).Refund();
                 //Console.WriteLine(paymentId);
             }
             catch (Exception ex)
-            { 
+            {
                 //inserting log with exceptions
                 enity.bank_transaction_id = "";
                 enity.address = "";
@@ -199,11 +271,11 @@ namespace RazorpaySampleApp
                 returnResult = objRes.Insert_Bill_Details(enity);
 
                 lblMsg.Text = "Payment Failed!";
-                lblMsg.ForeColor = System.Drawing.Color.Green;
+                lblMsg.ForeColor = System.Drawing.Color.Red;
                 img.ImageUrl = "Content/assest/images/error.gif";
 
-               
-                
+
+
             }
         }
     }
