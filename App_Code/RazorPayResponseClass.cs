@@ -252,7 +252,7 @@ namespace RazorpaySampleApp
             sqlParams[1].Direction = System.Data.ParameterDirection.Input;
             sqlParams[1].Value = pay_ref_no;
 
-            ds = DBFactory.GetHelper().ExecuteDataSet("[dbo].[get_payment_data_by_lead_id]", System.Data.CommandType.StoredProcedure, sqlParams);
+            ds = DBFactory.GetHelper().ExecuteDataSet("[dbo].[get_payment_data_by_lead_id_v1]", System.Data.CommandType.StoredProcedure, sqlParams);
 
             return ds;
         }
