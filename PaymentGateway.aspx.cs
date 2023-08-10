@@ -37,8 +37,7 @@ namespace RazorpaySampleApp
 
                         RazorPayResponseClass objRes = new RazorPayResponseClass();
                         string leadId = Encryption.Decrypt(lead_id);
-                        string transactionId = Encryption.Decrypt(transaction_id);
-
+                        string transactionId = Encryption.Decrypt(transaction_id);                      
                         DataSet ds = objRes.get_payment_data_by_lead_id(leadId, transactionId);
                         if (ds != null && ds.Tables.Count > 0 && ds.Tables[0] != null && ds.Tables[0].Rows.Count > 0)
                         {
@@ -154,6 +153,7 @@ namespace RazorpaySampleApp
                     }
                     //order_id = "order_MKmQAsWPMvz7bt";
                     Order order = new Order();
+                    List<Payment> orderPayment = new List<Payment>();
                     if (!string.IsNullOrWhiteSpace(order_id))
                     {
                         order = client.Order.Fetch(order_id);
@@ -209,7 +209,7 @@ namespace RazorpaySampleApp
                             {
                                 if (!string.IsNullOrWhiteSpace(order_id))
                                 {
-                                    List<Payment> orderPayment = client.Order.Fetch(order_id).Payments();
+                                    orderPayment = client.Order.Fetch(order_id).Payments();
                                     if (orderPayment != null && orderPayment.Count > 0)
                                     {
                                         List<string> ErrorList = new List<string>();
@@ -301,48 +301,56 @@ namespace RazorpaySampleApp
                                     }
                                     else
                                     {
-                                        Razorpay.Api.Order orderResponse = client.Order.Create(input);
-                                        if (orderResponse.Attributes != null)
+                                        if (orderPayment == null)
                                         {
-
-                                            ORResponse.lead_id = leadId;
-                                            ORResponse.transaction_id = transactionId;
-                                            ORResponse.id = Convert.ToString(orderResponse.Attributes["id"]);
-                                            ORResponse.amount = Convert.ToDecimal(orderResponse.Attributes["amount"]);
-                                            ORResponse.amount_paid = Convert.ToDecimal(orderResponse.Attributes["amount_paid"]);
-                                            ORResponse.amount_due = Convert.ToDecimal(orderResponse.Attributes["amount_due"]);
-                                            ORResponse.currency = Convert.ToString(orderResponse.Attributes["currency"]);
-                                            ORResponse.status = Convert.ToString(orderResponse.Attributes["status"]);
-                                            ORResponse.attempts = Convert.ToInt32(orderResponse.Attributes["attempts"]);
-                                            ORResponse.created_at = Convert.ToInt32(orderResponse.Attributes["created_at"]);
-                                            ORResponse.error_msg = "";
-                                            int returnResult = objRes.Insert_Order_Log(ORResponse);
-                                            if (returnResult > 0)
-                                            {
-                                                orderId = Convert.ToString(ORResponse.id);
-                                                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "ClickToPayment()", true);
-                                            }
-                                            else
-                                            {
-
-                                                lblError.Text = "Ooops! Something went wrong. Try again after sometime.";
-                                            }
+                                            lblmsg.Text = "You can not make payment.Please try after some times.";
+                                            return;
                                         }
                                         else
                                         {
-                                            ORResponse.lead_id = leadId;
-                                            ORResponse.transaction_id = transactionId;
-                                            ORResponse.id = "";
-                                            ORResponse.amount = 0;
-                                            ORResponse.amount_paid = 0;
-                                            ORResponse.amount_due = 0;
-                                            ORResponse.currency = "";
-                                            ORResponse.status = "";
-                                            ORResponse.attempts = 0;
-                                            ORResponse.created_at = 0;
-                                            ORResponse.error_msg = "Order not created";
-                                            int returnResult = objRes.Insert_Order_Log(ORResponse);
-                                            lblError.Text = "Ooops! Something went wrong. Try again after sometime.";
+                                            Razorpay.Api.Order orderResponse = client.Order.Create(input);
+                                            if (orderResponse.Attributes != null)
+                                            {
+
+                                                ORResponse.lead_id = leadId;
+                                                ORResponse.transaction_id = transactionId;
+                                                ORResponse.id = Convert.ToString(orderResponse.Attributes["id"]);
+                                                ORResponse.amount = Convert.ToDecimal(orderResponse.Attributes["amount"]);
+                                                ORResponse.amount_paid = Convert.ToDecimal(orderResponse.Attributes["amount_paid"]);
+                                                ORResponse.amount_due = Convert.ToDecimal(orderResponse.Attributes["amount_due"]);
+                                                ORResponse.currency = Convert.ToString(orderResponse.Attributes["currency"]);
+                                                ORResponse.status = Convert.ToString(orderResponse.Attributes["status"]);
+                                                ORResponse.attempts = Convert.ToInt32(orderResponse.Attributes["attempts"]);
+                                                ORResponse.created_at = Convert.ToInt32(orderResponse.Attributes["created_at"]);
+                                                ORResponse.error_msg = "";
+                                                int returnResult = objRes.Insert_Order_Log(ORResponse);
+                                                if (returnResult > 0)
+                                                {
+                                                    orderId = Convert.ToString(ORResponse.id);
+                                                    Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "ClickToPayment()", true);
+                                                }
+                                                else
+                                                {
+
+                                                    lblError.Text = "Ooops! Something went wrong. Try again after sometime.";
+                                                }
+                                            }
+                                            else
+                                            {
+                                                ORResponse.lead_id = leadId;
+                                                ORResponse.transaction_id = transactionId;
+                                                ORResponse.id = "";
+                                                ORResponse.amount = 0;
+                                                ORResponse.amount_paid = 0;
+                                                ORResponse.amount_due = 0;
+                                                ORResponse.currency = "";
+                                                ORResponse.status = "";
+                                                ORResponse.attempts = 0;
+                                                ORResponse.created_at = 0;
+                                                ORResponse.error_msg = "Order not created";
+                                                int returnResult = objRes.Insert_Order_Log(ORResponse);
+                                                lblError.Text = "Ooops! Something went wrong. Try again after sometime.";
+                                            }
                                         }
                                     }
                                 }
