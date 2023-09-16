@@ -519,6 +519,28 @@ namespace RazorpaySampleApp
             return returnResult;
         }
         #endregion
+
+        public DataSet get_payment_data_by_Booking_id(string booking_id, string pay_ref_no)
+        {
+            DataSet ds;
+            SqlParameter[] sqlParams = new SqlParameter[2];
+
+            sqlParams[0] = new SqlParameter();
+            sqlParams[0].ParameterName = "@booking_id";
+            sqlParams[0].DbType = DbType.String;
+            sqlParams[0].Direction = System.Data.ParameterDirection.Input;
+            sqlParams[0].Value = booking_id;
+
+            sqlParams[1] = new SqlParameter();
+            sqlParams[1].ParameterName = "@pay_ref_no";
+            sqlParams[1].DbType = DbType.Decimal;
+            sqlParams[1].Direction = System.Data.ParameterDirection.Input;
+            sqlParams[1].Value = pay_ref_no;
+
+            ds = DBFactory.GetHelper().ExecuteDataSet("[dbo].[get_payment_data_by_booking_id]", System.Data.CommandType.StoredProcedure, sqlParams);
+
+            return ds;
+        }
     }
 
     public class razorPayEnity
