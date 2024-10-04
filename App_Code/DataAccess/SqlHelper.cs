@@ -104,7 +104,7 @@ namespace RazorpaySampleApp.App_Code.DataAccess
             commandObject.Connection = connectionObject;
             commandObject.CommandText = commandText;
             commandObject.CommandType = commandType;
-            commandObject.CommandTimeout = 3600;
+            commandObject.CommandTimeout = 18000; 
             commandObject.Parameters.AddRange(parameters);
             try
             {

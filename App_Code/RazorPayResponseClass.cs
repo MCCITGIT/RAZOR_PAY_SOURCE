@@ -25,7 +25,7 @@ namespace RazorpaySampleApp
                 sqlParams[0].ParameterName = "@address";
                 sqlParams[0].DbType = DbType.String;
                 sqlParams[0].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[0].Value = string.IsNullOrEmpty(entity.address) ? (object)DBNull.Value : entity.address; 
+                sqlParams[0].Value = string.IsNullOrEmpty(entity.address) ? (object)DBNull.Value : entity.address;
 
                 sqlParams[1] = new SqlParameter();
                 sqlParams[1].ParameterName = "@amount";
@@ -44,146 +44,146 @@ namespace RazorpaySampleApp
                 sqlParams[3].ParameterName = "@bank";
                 sqlParams[3].DbType = DbType.String;
                 sqlParams[3].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[3].Value = string.IsNullOrEmpty(entity.bank) ? (object)DBNull.Value : entity.bank; 
+                sqlParams[3].Value = string.IsNullOrEmpty(entity.bank) ? (object)DBNull.Value : entity.bank;
 
                 sqlParams[4] = new SqlParameter();
                 sqlParams[4].ParameterName = "@bank_transaction_id";
                 sqlParams[4].DbType = DbType.String;
                 sqlParams[4].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[4].Value = string.IsNullOrEmpty(entity.bank_transaction_id) ? (object)DBNull.Value : entity.bank_transaction_id; 
+                sqlParams[4].Value = string.IsNullOrEmpty(entity.bank_transaction_id) ? (object)DBNull.Value : entity.bank_transaction_id;
 
                 sqlParams[5] = new SqlParameter();
                 sqlParams[5].ParameterName = "@captured";
                 sqlParams[5].DbType = DbType.String;
                 sqlParams[5].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[5].Value = string.IsNullOrEmpty(entity.captured) ? (object)DBNull.Value : entity.captured; 
+                sqlParams[5].Value = string.IsNullOrEmpty(entity.captured) ? (object)DBNull.Value : entity.captured;
 
                 sqlParams[6] = new SqlParameter();
                 sqlParams[6].ParameterName = "@card_id";
                 sqlParams[6].DbType = DbType.String;
                 sqlParams[6].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[6].Value = string.IsNullOrEmpty(entity.card_id) ? (object)DBNull.Value : entity.card_id; 
+                sqlParams[6].Value = string.IsNullOrEmpty(entity.card_id) ? (object)DBNull.Value : entity.card_id;
 
                 sqlParams[7] = new SqlParameter();
                 sqlParams[7].ParameterName = "@contact";
                 sqlParams[7].DbType = DbType.String;
                 sqlParams[7].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[7].Value = string.IsNullOrEmpty(entity.contact) ? (object)DBNull.Value : entity.contact; 
+                sqlParams[7].Value = string.IsNullOrEmpty(entity.contact) ? (object)DBNull.Value : entity.contact;
 
                 sqlParams[8] = new SqlParameter();
                 sqlParams[8].ParameterName = "@created_at";
                 sqlParams[8].DbType = DbType.String;
                 sqlParams[8].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[8].Value = string.IsNullOrEmpty(entity.created_at) ? (object)DBNull.Value : entity.created_at; 
+                sqlParams[8].Value = string.IsNullOrEmpty(entity.created_at) ? (object)DBNull.Value : entity.created_at;
 
                 sqlParams[9] = new SqlParameter();
                 sqlParams[9].ParameterName = "@currency";
                 sqlParams[9].DbType = DbType.String;
                 sqlParams[9].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[9].Value = string.IsNullOrEmpty(entity.currency) ? (object)DBNull.Value : entity.currency; 
+                sqlParams[9].Value = string.IsNullOrEmpty(entity.currency) ? (object)DBNull.Value : entity.currency;
 
                 sqlParams[10] = new SqlParameter();
                 sqlParams[10].ParameterName = "@description";
                 sqlParams[10].DbType = DbType.String;
                 sqlParams[10].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[10].Value = string.IsNullOrEmpty(entity.description) ? (object)DBNull.Value : entity.description; 
+                sqlParams[10].Value = string.IsNullOrEmpty(entity.description) ? (object)DBNull.Value : entity.description;
 
                 sqlParams[11] = new SqlParameter();
                 sqlParams[11].ParameterName = "@email";
                 sqlParams[11].DbType = DbType.String;
                 sqlParams[11].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[11].Value = string.IsNullOrEmpty(entity.email) ? (object)DBNull.Value : entity.email; 
+                sqlParams[11].Value = string.IsNullOrEmpty(entity.email) ? (object)DBNull.Value : entity.email;
 
                 sqlParams[12] = new SqlParameter();
                 sqlParams[12].ParameterName = "@entity";
                 sqlParams[12].DbType = DbType.String;
                 sqlParams[12].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[12].Value = string.IsNullOrEmpty(entity.entity) ? (object)DBNull.Value : entity.entity; 
+                sqlParams[12].Value = string.IsNullOrEmpty(entity.entity) ? (object)DBNull.Value : entity.entity;
 
                 sqlParams[13] = new SqlParameter();
                 sqlParams[13].ParameterName = "@error_code";
                 sqlParams[13].DbType = DbType.String;
                 sqlParams[13].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[13].Value = string.IsNullOrEmpty(entity.error_code) ? (object)DBNull.Value : entity.error_code; 
+                sqlParams[13].Value = string.IsNullOrEmpty(entity.error_code) ? (object)DBNull.Value : entity.error_code;
 
                 sqlParams[14] = new SqlParameter();
                 sqlParams[14].ParameterName = "@error_description";
                 sqlParams[14].DbType = DbType.String;
                 sqlParams[14].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[14].Value = string.IsNullOrEmpty(entity.error_description) ? (object)DBNull.Value : entity.error_description; 
+                sqlParams[14].Value = string.IsNullOrEmpty(entity.error_description) ? (object)DBNull.Value : entity.error_description;
 
                 sqlParams[15] = new SqlParameter();
                 sqlParams[15].ParameterName = "@error_reason";
                 sqlParams[15].DbType = DbType.String;
                 sqlParams[15].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[15].Value = string.IsNullOrEmpty(entity.error_reason) ? (object)DBNull.Value : entity.error_reason; 
+                sqlParams[15].Value = string.IsNullOrEmpty(entity.error_reason) ? (object)DBNull.Value : entity.error_reason;
 
                 sqlParams[16] = new SqlParameter();
                 sqlParams[16].ParameterName = "@error_source";
                 sqlParams[16].DbType = DbType.String;
                 sqlParams[16].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[16].Value = string.IsNullOrEmpty(entity.error_source) ? (object)DBNull.Value : entity.error_source; 
+                sqlParams[16].Value = string.IsNullOrEmpty(entity.error_source) ? (object)DBNull.Value : entity.error_source;
 
                 sqlParams[17] = new SqlParameter();
                 sqlParams[17].ParameterName = "@error_step";
                 sqlParams[17].DbType = DbType.String;
                 sqlParams[17].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[17].Value = string.IsNullOrEmpty(entity.error_step) ? (object)DBNull.Value : entity.error_step; 
+                sqlParams[17].Value = string.IsNullOrEmpty(entity.error_step) ? (object)DBNull.Value : entity.error_step;
 
                 sqlParams[18] = new SqlParameter();
                 sqlParams[18].ParameterName = "@fee";
                 sqlParams[18].DbType = DbType.String;
                 sqlParams[18].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[18].Value = string.IsNullOrEmpty(entity.fee) ? (object)DBNull.Value : entity.fee; 
+                sqlParams[18].Value = string.IsNullOrEmpty(entity.fee) ? (object)DBNull.Value : entity.fee;
 
                 sqlParams[19] = new SqlParameter();
                 sqlParams[19].ParameterName = "@international";
                 sqlParams[19].DbType = DbType.String;
                 sqlParams[19].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[19].Value = string.IsNullOrEmpty(entity.international) ? (object)DBNull.Value : entity.international; 
+                sqlParams[19].Value = string.IsNullOrEmpty(entity.international) ? (object)DBNull.Value : entity.international;
 
                 sqlParams[20] = new SqlParameter();
                 sqlParams[20].ParameterName = "@invoice_id";
                 sqlParams[20].DbType = DbType.String;
                 sqlParams[20].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[20].Value = string.IsNullOrEmpty(entity.invoice_id) ? (object)DBNull.Value : entity.invoice_id; 
+                sqlParams[20].Value = string.IsNullOrEmpty(entity.invoice_id) ? (object)DBNull.Value : entity.invoice_id;
 
                 sqlParams[21] = new SqlParameter();
                 sqlParams[21].ParameterName = "@method";
                 sqlParams[21].DbType = DbType.String;
                 sqlParams[21].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[21].Value = string.IsNullOrEmpty(entity.method) ? (object)DBNull.Value : entity.method; 
+                sqlParams[21].Value = string.IsNullOrEmpty(entity.method) ? (object)DBNull.Value : entity.method;
 
                 sqlParams[22] = new SqlParameter();
                 sqlParams[22].ParameterName = "@order_id";
                 sqlParams[22].DbType = DbType.String;
                 sqlParams[22].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[22].Value = string.IsNullOrEmpty(entity.order_id) ? (object)DBNull.Value : entity.order_id; 
+                sqlParams[22].Value = string.IsNullOrEmpty(entity.order_id) ? (object)DBNull.Value : entity.order_id;
 
                 sqlParams[23] = new SqlParameter();
                 sqlParams[23].ParameterName = "@refund_status";
                 sqlParams[23].DbType = DbType.String;
                 sqlParams[23].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[23].Value = string.IsNullOrEmpty(entity.refund_status) ? (object)DBNull.Value : entity.refund_status; 
+                sqlParams[23].Value = string.IsNullOrEmpty(entity.refund_status) ? (object)DBNull.Value : entity.refund_status;
 
                 sqlParams[24] = new SqlParameter();
                 sqlParams[24].ParameterName = "@status";
                 sqlParams[24].DbType = DbType.String;
                 sqlParams[24].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[24].Value = string.IsNullOrEmpty(entity.status) ? (object)DBNull.Value : entity.status; 
+                sqlParams[24].Value = string.IsNullOrEmpty(entity.status) ? (object)DBNull.Value : entity.status;
 
 
                 sqlParams[25] = new SqlParameter();
                 sqlParams[25].ParameterName = "@tax";
                 sqlParams[25].DbType = DbType.String;
                 sqlParams[25].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[25].Value = string.IsNullOrEmpty(entity.tax) ? (object)DBNull.Value : entity.tax; 
+                sqlParams[25].Value = string.IsNullOrEmpty(entity.tax) ? (object)DBNull.Value : entity.tax;
 
                 sqlParams[26] = new SqlParameter();
                 sqlParams[26].ParameterName = "@vpa";
                 sqlParams[26].DbType = DbType.String;
                 sqlParams[26].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[26].Value = string.IsNullOrEmpty(entity.vpa) ? (object)DBNull.Value : entity.vpa; 
+                sqlParams[26].Value = string.IsNullOrEmpty(entity.vpa) ? (object)DBNull.Value : entity.vpa;
 
                 sqlParams[27] = new SqlParameter();
                 sqlParams[27].ParameterName = "@wallet";
@@ -225,7 +225,7 @@ namespace RazorpaySampleApp
             }
             catch (Exception ex)
             {
-                returnResult=-1;
+                returnResult = -1;
             }
             finally
             {
@@ -234,6 +234,7 @@ namespace RazorpaySampleApp
             }
             return returnResult;
         }
+
 
         public DataSet get_payment_data_by_lead_id(string lead_id, string pay_ref_no)
         {
@@ -260,7 +261,7 @@ namespace RazorpaySampleApp
         public DataSet Get_Payment_Details_By_trxid(string pay_ref_no)
         {
             DataSet ds;
-            SqlParameter[] sqlParams = new SqlParameter[1];    
+            SqlParameter[] sqlParams = new SqlParameter[1];
 
             sqlParams[0] = new SqlParameter();
             sqlParams[0].ParameterName = "@pay_ref_no";
@@ -378,7 +379,7 @@ namespace RazorpaySampleApp
                 sqlParams[14].ParameterName = "@exception_msg";
                 sqlParams[14].DbType = DbType.String;
                 sqlParams[14].Direction = System.Data.ParameterDirection.Input;
-                sqlParams[14].Value = string.IsNullOrEmpty(entity.exception_msg) ? (object)DBNull.Value : entity.exception_msg;            
+                sqlParams[14].Value = string.IsNullOrEmpty(entity.exception_msg) ? (object)DBNull.Value : entity.exception_msg;
 
                 sqlConn = (SqlConnection)DBFactory.GetHelper().OpenConnection();
                 sqlTrans = sqlConn.BeginTransaction();
@@ -541,9 +542,254 @@ namespace RazorpaySampleApp
 
             return ds;
         }
+
+        public DataSet GetOrderDetailsByLead(string lead_id)
+        {
+            DataSet ds;
+            SqlParameter[] sqlParams = new SqlParameter[1];
+
+            sqlParams[0] = new SqlParameter();
+            sqlParams[0].ParameterName = "@lead_id";
+            sqlParams[0].DbType = DbType.String;
+            sqlParams[0].Direction = System.Data.ParameterDirection.Input;
+            sqlParams[0].Value = lead_id;
+
+
+            ds = DBFactory.GetHelper().ExecuteDataSet("[dbo].[Razor_Pay_Get_Order_Details_ByLead]", System.Data.CommandType.StoredProcedure, sqlParams);
+
+            return ds;
+        }
+        public int Insert_Razor_Pay_Response_Log_Not_In_Log_Table(RazorPayPendingEnity entity)
+        {
+            int returnResult = 0;
+            SqlConnection sqlConn = null;
+            SqlTransaction sqlTrans = null;
+            try
+            {
+                SqlParameter[] sqlParams = new SqlParameter[31];
+
+                sqlParams[0] = new SqlParameter();
+                sqlParams[0].ParameterName = "@address";
+                sqlParams[0].DbType = DbType.String;
+                sqlParams[0].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[0].Value = string.IsNullOrEmpty(entity.address) ? (object)DBNull.Value : entity.address;
+
+                sqlParams[1] = new SqlParameter();
+                sqlParams[1].ParameterName = "@amount";
+                sqlParams[1].DbType = DbType.Decimal;
+                sqlParams[1].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[1].Value = entity.amount;
+
+
+                sqlParams[2] = new SqlParameter();
+                sqlParams[2].ParameterName = "@amount_refunded";
+                sqlParams[2].DbType = DbType.Decimal;
+                sqlParams[2].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[2].Value = entity.amount_refunded;
+
+                sqlParams[3] = new SqlParameter();
+                sqlParams[3].ParameterName = "@bank";
+                sqlParams[3].DbType = DbType.String;
+                sqlParams[3].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[3].Value = string.IsNullOrEmpty(entity.bank) ? (object)DBNull.Value : entity.bank;
+
+                sqlParams[4] = new SqlParameter();
+                sqlParams[4].ParameterName = "@bank_transaction_id";
+                sqlParams[4].DbType = DbType.String;
+                sqlParams[4].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[4].Value = string.IsNullOrEmpty(entity.bank_transaction_id) ? (object)DBNull.Value : entity.bank_transaction_id;
+
+                sqlParams[5] = new SqlParameter();
+                sqlParams[5].ParameterName = "@captured";
+                sqlParams[5].DbType = DbType.String;
+                sqlParams[5].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[5].Value = string.IsNullOrEmpty(entity.captured) ? (object)DBNull.Value : entity.captured;
+
+                sqlParams[6] = new SqlParameter();
+                sqlParams[6].ParameterName = "@card_id";
+                sqlParams[6].DbType = DbType.String;
+                sqlParams[6].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[6].Value = string.IsNullOrEmpty(entity.card_id) ? (object)DBNull.Value : entity.card_id;
+
+                sqlParams[7] = new SqlParameter();
+                sqlParams[7].ParameterName = "@contact";
+                sqlParams[7].DbType = DbType.String;
+                sqlParams[7].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[7].Value = string.IsNullOrEmpty(entity.contact) ? (object)DBNull.Value : entity.contact;
+
+                sqlParams[8] = new SqlParameter();
+                sqlParams[8].ParameterName = "@created_at";
+                sqlParams[8].DbType = DbType.String;
+                sqlParams[8].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[8].Value = string.IsNullOrEmpty(entity.created_at) ? (object)DBNull.Value : entity.created_at;
+
+                sqlParams[9] = new SqlParameter();
+                sqlParams[9].ParameterName = "@currency";
+                sqlParams[9].DbType = DbType.String;
+                sqlParams[9].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[9].Value = string.IsNullOrEmpty(entity.currency) ? (object)DBNull.Value : entity.currency;
+
+                sqlParams[10] = new SqlParameter();
+                sqlParams[10].ParameterName = "@description";
+                sqlParams[10].DbType = DbType.String;
+                sqlParams[10].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[10].Value = string.IsNullOrEmpty(entity.description) ? (object)DBNull.Value : entity.description;
+
+                sqlParams[11] = new SqlParameter();
+                sqlParams[11].ParameterName = "@email";
+                sqlParams[11].DbType = DbType.String;
+                sqlParams[11].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[11].Value = string.IsNullOrEmpty(entity.email) ? (object)DBNull.Value : entity.email;
+
+                sqlParams[12] = new SqlParameter();
+                sqlParams[12].ParameterName = "@entity";
+                sqlParams[12].DbType = DbType.String;
+                sqlParams[12].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[12].Value = string.IsNullOrEmpty(entity.entity) ? (object)DBNull.Value : entity.entity;
+
+                sqlParams[13] = new SqlParameter();
+                sqlParams[13].ParameterName = "@error_code";
+                sqlParams[13].DbType = DbType.String;
+                sqlParams[13].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[13].Value = string.IsNullOrEmpty(entity.error_code) ? (object)DBNull.Value : entity.error_code;
+
+                sqlParams[14] = new SqlParameter();
+                sqlParams[14].ParameterName = "@error_description";
+                sqlParams[14].DbType = DbType.String;
+                sqlParams[14].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[14].Value = string.IsNullOrEmpty(entity.error_description) ? (object)DBNull.Value : entity.error_description;
+
+                sqlParams[15] = new SqlParameter();
+                sqlParams[15].ParameterName = "@error_reason";
+                sqlParams[15].DbType = DbType.String;
+                sqlParams[15].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[15].Value = string.IsNullOrEmpty(entity.error_reason) ? (object)DBNull.Value : entity.error_reason;
+
+                sqlParams[16] = new SqlParameter();
+                sqlParams[16].ParameterName = "@error_source";
+                sqlParams[16].DbType = DbType.String;
+                sqlParams[16].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[16].Value = string.IsNullOrEmpty(entity.error_source) ? (object)DBNull.Value : entity.error_source;
+
+                sqlParams[17] = new SqlParameter();
+                sqlParams[17].ParameterName = "@error_step";
+                sqlParams[17].DbType = DbType.String;
+                sqlParams[17].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[17].Value = string.IsNullOrEmpty(entity.error_step) ? (object)DBNull.Value : entity.error_step;
+
+                sqlParams[18] = new SqlParameter();
+                sqlParams[18].ParameterName = "@fee";
+                sqlParams[18].DbType = DbType.String;
+                sqlParams[18].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[18].Value = string.IsNullOrEmpty(entity.fee) ? (object)DBNull.Value : entity.fee;
+
+                sqlParams[19] = new SqlParameter();
+                sqlParams[19].ParameterName = "@international";
+                sqlParams[19].DbType = DbType.String;
+                sqlParams[19].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[19].Value = string.IsNullOrEmpty(entity.international) ? (object)DBNull.Value : entity.international;
+
+                sqlParams[20] = new SqlParameter();
+                sqlParams[20].ParameterName = "@invoice_id";
+                sqlParams[20].DbType = DbType.String;
+                sqlParams[20].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[20].Value = string.IsNullOrEmpty(entity.invoice_id) ? (object)DBNull.Value : entity.invoice_id;
+
+                sqlParams[21] = new SqlParameter();
+                sqlParams[21].ParameterName = "@method";
+                sqlParams[21].DbType = DbType.String;
+                sqlParams[21].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[21].Value = string.IsNullOrEmpty(entity.method) ? (object)DBNull.Value : entity.method;
+
+                sqlParams[22] = new SqlParameter();
+                sqlParams[22].ParameterName = "@order_id";
+                sqlParams[22].DbType = DbType.String;
+                sqlParams[22].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[22].Value = string.IsNullOrEmpty(entity.order_id) ? (object)DBNull.Value : entity.order_id;
+
+                sqlParams[23] = new SqlParameter();
+                sqlParams[23].ParameterName = "@refund_status";
+                sqlParams[23].DbType = DbType.String;
+                sqlParams[23].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[23].Value = string.IsNullOrEmpty(entity.refund_status) ? (object)DBNull.Value : entity.refund_status;
+
+                sqlParams[24] = new SqlParameter();
+                sqlParams[24].ParameterName = "@status";
+                sqlParams[24].DbType = DbType.String;
+                sqlParams[24].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[24].Value = string.IsNullOrEmpty(entity.status) ? (object)DBNull.Value : entity.status;
+
+
+                sqlParams[25] = new SqlParameter();
+                sqlParams[25].ParameterName = "@tax";
+                sqlParams[25].DbType = DbType.String;
+                sqlParams[25].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[25].Value = string.IsNullOrEmpty(entity.tax) ? (object)DBNull.Value : entity.tax;
+
+                sqlParams[26] = new SqlParameter();
+                sqlParams[26].ParameterName = "@vpa";
+                sqlParams[26].DbType = DbType.String;
+                sqlParams[26].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[26].Value = string.IsNullOrEmpty(entity.vpa) ? (object)DBNull.Value : entity.vpa;
+
+                sqlParams[27] = new SqlParameter();
+                sqlParams[27].ParameterName = "@wallet";
+                sqlParams[27].DbType = DbType.String;
+                sqlParams[27].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[27].Value = string.IsNullOrEmpty(entity.wallet) ? (object)DBNull.Value : entity.wallet;
+
+                sqlParams[28] = new SqlParameter();
+                sqlParams[28].ParameterName = "@id";
+                sqlParams[28].DbType = DbType.String;
+                sqlParams[28].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[28].Value = entity.id;
+
+                sqlParams[29] = new SqlParameter();
+                sqlParams[29].ParameterName = "@trx_id";
+                sqlParams[29].DbType = DbType.String;
+                sqlParams[29].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[29].Value = entity.trx_id;
+
+                sqlParams[30] = new SqlParameter();
+                sqlParams[30].ParameterName = "@exception_msg";
+                sqlParams[30].DbType = DbType.String;
+                sqlParams[30].Direction = System.Data.ParameterDirection.Input;
+                sqlParams[30].Value = string.IsNullOrEmpty(entity.exception) ? (object)DBNull.Value : entity.exception;
+
+                sqlConn = (SqlConnection)DBFactory.GetHelper().OpenConnection();
+                sqlTrans = sqlConn.BeginTransaction();
+                SqlCommand sqlCmd = new SqlCommand();
+                sqlCmd.Connection = sqlConn;
+                sqlCmd.Transaction = sqlTrans;
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.CommandText = "[dbo].[insert_razor_pay_response_log_not_in_log_table]";
+                sqlCmd.CommandTimeout = 36000;
+                sqlCmd.Parameters.AddRange(sqlParams);
+                returnResult = sqlCmd.ExecuteNonQuery();
+                if (returnResult > 0)
+                {
+                    sqlTrans.Commit();
+                }
+            }
+            catch (Exception ex)
+            {
+                if (sqlTrans != null)
+                {
+                    sqlTrans.Rollback();
+                }
+                returnResult = -1;
+                throw ex;
+            }
+            finally
+            {
+                if ((sqlConn != null))
+                    sqlConn.Close();
+            }
+            return returnResult;
+        }
     }
 
-    public class razorPayEnity
+    public class RazorPayPendingEnity
     {
         public string trx_id { get; set; }
         public string id { get; set; }
